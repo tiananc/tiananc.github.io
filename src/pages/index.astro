@@ -1,0 +1,43 @@
+---
+import MiniWindow from '../components/MiniWindow.astro';
+import Window from '../components/Window.astro';
+
+---
+
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+    <title>Tiana Clemons</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+  <body class="h-screen bg-snow">
+	<header class="bg-snow">
+	<div class = "pt-8 pb-12">
+		<div id = "title" class = "font-indieflower text-xl flex justify-center pb-4">
+			<h1>⋆.˚⟡ ࣪ ˖ Tiana Clemons ˖ ࣪ ⟡˚.⋆</h1>
+		</div>
+		<ul id = "navbar" class = "flex justify-center text-base space-x-8">
+			<li><a href="#">home</a></li>
+			<li><a href="#">projects</a></li>
+			<li><a href="#">links</a></li>
+		</ul>
+	</div>
+	</header>
+	<div class="flex justify-center">
+		<Window>
+			<h2 class = "pl-4" slot="section">home</h2>
+			<span slot = "content">
+			<h1 class = "font-semibold text-lg">Hi, I'm Tiana.</h1><br>
+			<p>I'm a Computer Science & Cultural Anthropology Student at Duke University. I hope to help
+			   make things that make people smile.
+			</p>
+		</span>
+		</Window>
+	</div>
+  </body>
+</html>
+

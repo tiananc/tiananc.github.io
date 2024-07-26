@@ -1,0 +1,13 @@
+---
+import RainbowBtn from "./RainbowBtn.astro";
+---
+
+<div class="container min-w-80 w-1/2 mb-12 border-2 border-dark-grey shadow-[rgba(90,90,90,0.75)_4px_4px_0px_0px]">
+    <div class="container bg-grey-smoke border-b-2 border-dark-grey flex justify-between p-1">
+        <slot name="section" />
+        <RainbowBtn>
+    </div>
+    <div class="container p-4 bg-snow border-dark-grey pt=0  h-[250px]">
+        <slot name = "content"/>
+    </div>
+</div>
