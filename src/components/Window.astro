@@ -1,13 +1,56 @@
 ---
-import RainbowBtn from "./RainbowBtn.astro";
+import styles from "../styles/global.css"
 ---
 
 <div class="container min-w-80 w-1/2 mb-12 border-2 border-dark-grey shadow-[rgba(90,90,90,0.75)_4px_4px_0px_0px]">
-    <div class="container bg-grey-smoke border-b-2 border-dark-grey flex justify-between p-1">
+    <div id = "windowHeader" class="container border-b-2 border-dark-grey flex justify-between p-1">
         <slot name="section" />
-        <RainbowBtn>
+        <ul id = "rainbowbtns" class="flex space-x-2 pr-4 pt-1">
+            <li><button id = "btn-melon" class="rounded-full h-4 w-4 flex bg-melon border-dark-grey border-2"></button></li>
+            <li><button id = "btn-sunset"  class="rounded-full h-4 w-4 flex bg-sunset border-dark-grey border-2"></button></li>
+            <li><button id = "btn-cream"  class="rounded-full h-4 w-4 flex bg-cream border-dark-grey border-2"></button></li>
+            <li><button id = "btn-tea-green"  class="rounded-full h-4 w-4 flex bg-tea-green border-dark-grey border-2"></button></li>
+            <li><button id = "btn-electric-blue"  class="rounded-full h-4 w-4 flex bg-electric-blue border-dark-grey border-2"></button></li>
+            <li><button id = "btn-periwinkle"  class="rounded-full h-4 w-4 flex bg-periwinkle border-dark-grey border-2"></button></li>
+            <li><button  id = "btn-mauve"  class="rounded-full h-4 w-4 flex bg-mauve border-dark-grey border-2"></button></li>
+            <li><button  id = "btn-snow"  class="rounded-full h-4 w-4 flex bg-snow border-dark-grey border-2"></button></li>
+
+            </ul>
     </div>
-    <div class="container p-4 bg-snow border-dark-grey pt=0  h-[250px]">
+    <div class="container p-5 bg-snow border-dark-grey pt=0  min-h-[250px]">
         <slot name = "content"/>
     </div>
 </div>
+
+<script>
+    
+    function changeTheme(colorClass: string) {
+        const elem = document.getElementById("windowHeader");
+        if (elem != null) {
+            elem.className = "container border-b-2 border-dark-grey flex justify-between p-1 " + colorClass;
+            localStorage.setItem('selectedTheme', colorClass);
+        }
+    }
+
+    function applySavedTheme() {
+        const savedTheme = localStorage.getItem('selectedTheme');
+        if (savedTheme) {
+            const elem = document.getElementById("windowHeader");
+            if (elem != null) {
+                elem.className = "container border-b-2 border-dark-grey flex justify-between p-1 " + savedTheme;
+            }
+        }
+    }
+        applySavedTheme();
+        document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btn-melon")?.addEventListener("click", () => changeTheme('bg-melon'));
+        document.getElementById("btn-sunset")?.addEventListener("click", () => changeTheme('bg-sunset'));
+        document.getElementById("btn-cream")?.addEventListener("click", () => changeTheme('bg-cream'));
+        document.getElementById("btn-tea-green")?.addEventListener("click", () => changeTheme('bg-tea-green'));
+        document.getElementById("btn-electric-blue")?.addEventListener("click", () => changeTheme('bg-electric-blue'));
+        document.getElementById("btn-periwinkle")?.addEventListener("click", () => changeTheme('bg-periwinkle'));
+        document.getElementById("btn-mauve")?.addEventListener("click", () => changeTheme('bg-mauve'));
+        document.getElementById("btn-snow")?.addEventListener("click", () => changeTheme('bg-snow'));
+
+    });
+</script>

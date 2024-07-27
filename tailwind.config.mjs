@@ -12,7 +12,6 @@ export default {
 				'snow': '#FFFFFC',
 				'grey-smoke': '#EFEFEF',
 				'dark-grey': '#313131',
-
 				'melon': '#FFADAD',
 				'sunset': '#FFD6A5',
 				'cream': '#FDFFB6',
