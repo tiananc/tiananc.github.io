@@ -6,7 +6,6 @@
   display: grid;
   grid-auto-columns: calc(100%);
   grid-auto-flow: column;
-  overflow-x: scroll;
 }
 
 .section {
